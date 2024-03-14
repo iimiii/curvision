@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="CurVision"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Intro.NoActionBar"
+        tools:targetApi="31">
+        <activity
+            android:name=".vehiclespage"
+            android:exported="false" />
+        <activity
+            android:name=".registerpage"
+            android:exported="true" />
+        <activity
+            android:name=".loginpage"
+            android:exported="true" />
+        <activity
+            android:name=".historypage"
+            android:exported="true" />
+        <activity
+            android:name=".emergencypage"
+            android:exported="true" />
+        <activity
+            android:name=".homepage"
+            android:exported="true" />
+        <activity
+            android:name=".LoginRegister"
+            android:exported="true" />
+        <activity
+            android:name=".Introduction"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:background="@drawable/main_background">
+
+        <ImageView
+            android:layout_width="277dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/search_icon"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:text="@string/emergency_contacts"
+            android:textColor="@color/bg" />
+
+
+    </RelativeLayout>
+
+
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="500dp"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/line"
+            tools:ignore="ImageContrastCheck" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="@string/cdrrmo_danao_city"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15sp"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:text="@string/_0930_822_7211"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/line"
+            tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/safety_precautions"
+                    android:textColor="#37474F"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/sp1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/sp2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/sp3"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/sp4"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/sp5"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/sp6"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck" />
+
+            </LinearLayout>
+</ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/frame3">
+
+        <ImageView
+            android:id="@+id/home_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_icon"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo" />
+        <ImageView
+            android:id="@+id/emergency_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/emergency_icon"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo"/>
+        <ImageView
+            android:id="@+id/history_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/history_icon"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo"/>
+        <ImageView
+            android:id="@+id/car_icon"
+            android:layout_width="35dp"
+            android:layout_height="24dp"
+            android:src="@drawable/car_icon"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="13dp"
+            android:contentDescription="@string/todo"/>
+
+        </LinearLayout>
+</LinearLayout>

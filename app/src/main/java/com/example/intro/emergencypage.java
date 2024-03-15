@@ -8,8 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class emergencypage extends AppCompatActivity {
 
-    private static final int REQUEST_CALL_PHONE = 1;
-    private ImageView imageCall;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

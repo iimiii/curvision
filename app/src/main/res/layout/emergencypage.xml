@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,40 +10,59 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.05"
+        android:layout_weight="0.2"
         android:background="@drawable/main_background">
 
+
         <ImageView
-            android:layout_width="277dp"
-            android:layout_height="match_parent"
+            android:layout_width="125dp"
+            android:layout_height="112dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <TextView
+            android:layout_width="271dp"
+            android:layout_height="81dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/search_icon"
-            tools:ignore="ContentDescription" />
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="@string/emergency_contacts"
+            android:textColor="@color/bg"
+            android:textSize="29sp"
+            tools:ignore="TextSizeCheck" />
+
+
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp"
-            android:text="@string/emergency_contacts"
-            android:textColor="@color/bg" />
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="50dp"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textColor="@color/black"
+            android:text="@string/cdrrmo_danao_city"
+            tools:ignore="RelativeOverlap" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="250sp"
+            android:layout_marginStart="100dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/_0930_822_7211"
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 
-
-<ScrollView
+    <ScrollView
     android:layout_width="wrap_content"
-    android:layout_height="500dp"
+    android:layout_height="430dp"
     android:layout_gravity="center">
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,41 +71,13 @@
         tools:ignore="UseCompoundDrawables">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/line"
-            tools:ignore="ImageContrastCheck" />
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="15dp"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:text="@string/cdrrmo_danao_city"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="15sp"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
-                        android:text="@string/_0930_822_7211"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/line"
             tools:ignore="ImageContrastCheck" />
@@ -96,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/safety_precautions"
                     android:textColor="#37474F"
@@ -146,16 +136,17 @@
                     android:textSize="15sp"
                     tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp5"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/sp5"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck" />
+
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -169,6 +160,21 @@
 
             </LinearLayout>
 </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp">
+
+        <ImageView
+            android:id="@+id/callButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/call"
+            tools:ignore="ImageContrastCheck" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

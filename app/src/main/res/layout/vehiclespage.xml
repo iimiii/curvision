@@ -14,29 +14,35 @@
         android:background="@drawable/main_background">
 
         <ImageView
-            android:layout_width="277dp"
-            android:layout_height="match_parent"
+            android:layout_width="125dp"
+            android:layout_height="112dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/search_icon"
-            tools:ignore="ContentDescription" />
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="81dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
             android:text="@string/approaching_vehicles"
             android:textColor="@color/bg"
-            android:textSize="25sp"
-            tools:ignore="TextSizeCheck" />
+            android:textSize="30sp"
+            tools:ignore="RelativeOverlap,TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/av"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="180dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/list"
+            android:textColor="#37474F"
+            android:textSize="30sp" />
 
 
     </RelativeLayout>
@@ -51,16 +57,7 @@
 
 
 
-        <TextView
-            android:id="@+id/av"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/list"
-            android:textColor="#37474F"
-            android:textSize="25sp" />
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -70,14 +67,13 @@
             android:contentDescription="@string/todo"
             android:src="@drawable/line" />
         <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="430dp"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
             android:layout_gravity="center">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:background="@drawable/frame"
                 android:orientation="vertical"
                 android:layout_marginTop="15dp">
 
@@ -118,6 +114,27 @@
                     android:contentDescription="@string/todo"
                     android:src="@drawable/frame2"
                     tools:ignore="ImageContrastCheck" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/frame2"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/frame2"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/frame2"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo"/>
 
                 <ImageView
                     android:layout_width="match_parent"

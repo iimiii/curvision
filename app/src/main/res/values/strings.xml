@@ -25,7 +25,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="welcome">Welcome</string>
+    <string name="welcome">WELCOME</string>
     <string name="todo">TODO</string>
     <string name="approaching_vehicles">Approaching Vehicles</string>
     <string name="history_of_accidents">Accident History</string>
@@ -45,5 +45,6 @@
     <string name="d1">Monday, August 21, 2017 at 9:47AM</string>
     <string name="d2">Wednesday, March 28, 2018 at 7:22AM</string>
     <string name="see_more">see more</string>
-    <string name="list">List of Approching Vehicles</string>
+    <string name="list">List of Approaching Vehicles</string>
+    <string name="call">CALL</string>
 </resources>

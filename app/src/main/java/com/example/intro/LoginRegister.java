@@ -1,10 +1,11 @@
 package com.example.intro;
 
-import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,14 +20,18 @@ public class LoginRegister extends AppCompatActivity {
         Button loginButton = findViewById(R.id.loginButton);
 
 
+
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent(LoginRegister.this, registerpage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         loginButton.setOnClickListener(v -> {
             Intent intent = new Intent(LoginRegister.this, loginpage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
+
     }
 }

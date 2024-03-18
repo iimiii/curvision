@@ -79,6 +79,7 @@ public class Introduction extends AppCompatActivity {
                     break;
                 case 2:
                     startActivity(new Intent(Introduction.this, LoginRegister.class));
+                    overridePendingTransition(R.anim.animate_fade_enter, R.anim.animate_fade_exit);
                     break;
             }
         });

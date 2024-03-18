@@ -8,16 +8,18 @@
 
 
     <RelativeLayout
+        android:id="@+id/mainbg"
         android:layout_width="match_parent"
-        android:layout_height="8dp"
+        android:layout_height="45dp"
         android:layout_weight="0.05"
-        android:background="@drawable/main_background">
+        android:background="@drawable/mainfinal">
 
         <ImageView
             android:layout_width="125dp"
             android:layout_height="112dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
+
 
 
         <TextView
@@ -32,6 +34,8 @@
             android:textColor="@color/bg"
             android:textSize="35sp"
             tools:ignore="TextSizeCheck" />
+
+
 
 
     </RelativeLayout>
@@ -162,7 +166,7 @@
                 android:src="@drawable/line" />
 
             <ScrollView
-                android:layout_width="300dp"
+                android:layout_width="360dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center">
 
@@ -170,24 +174,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp">
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/frame2"
-                    tools:ignore="ImageContrastCheck" />
+                    android:layout_marginTop="0dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-                <ImageView
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/frame2"
-                    tools:ignore="ImageContrastCheck" />
+                    android:layout_marginTop="10dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
             </LinearLayout>
             </ScrollView>
@@ -204,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/emergency_contacts"
                     android:textColor="#37474F"
@@ -214,14 +233,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="23dp"
-                    android:layout_marginTop="10dp"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/line" />
 
-                <ScrollView
-                    android:layout_width="300dp"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -230,29 +244,27 @@
                     android:orientation="vertical"
                     android:layout_marginTop="10dp">
 
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:text="@string/cdrrmo_danao_city"
                         android:textColor="@color/black"
-                        android:text="@string/cdrrmo_danao_city"/>
-
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="15sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:text="@string/_0930_822_7211"/>
 
                 </LinearLayout>
-                </ScrollView>
+
 
     </LinearLayout>
         </LinearLayout>

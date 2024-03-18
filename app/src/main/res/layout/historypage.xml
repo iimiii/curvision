@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.05"
-        android:background="@drawable/main_background">
+        android:background="@drawable/mainfinal">
 
         <ImageView
             android:layout_width="125dp"
@@ -20,33 +20,34 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:layout_width="271dp"
-            android:layout_height="81dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="140dp"
             android:layout_marginTop="25dp"
-            android:layout_marginEnd="0dp"
-            android:gravity="center"
+            android:layout_marginEnd="25dp"
             android:text="@string/history_of_accidents"
             android:textColor="@color/bg"
-            android:textSize="35sp"
-            tools:ignore="TextSizeCheck" />
-
-        <ImageView
-            android:layout_width="266dp"
-            android:layout_height="219dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="120dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/locmap" />
-
+            android:textSize="33sp"
+            tools:ignore="RelativeOverlap,TextSizeCheck" />
 
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/line" />
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:layout_gravity="center">
 
         <LinearLayout
@@ -55,14 +56,6 @@
             android:orientation="vertical"
             tools:ignore="NestedWeights,UseCompoundDrawables">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="0dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/line"
-                tools:ignore="ImageContrastCheck" />
 
 
             <TextView

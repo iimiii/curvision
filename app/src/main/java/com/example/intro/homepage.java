@@ -1,5 +1,6 @@
 package com.example.intro;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -26,39 +27,45 @@ public class homepage extends AppCompatActivity {
 
         home_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, homepage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         emergency_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, emergencypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         history_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, historypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         car_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, vehiclespage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         avButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, vehiclespage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
         ahButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, historypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
         ecButton.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, emergencypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(homepage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
-
 
 
     }

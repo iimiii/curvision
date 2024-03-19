@@ -1,5 +1,6 @@
 package com.example.intro;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -21,22 +22,26 @@ public class historypage extends AppCompatActivity {
 
         home_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(historypage.this, homepage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(historypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         emergency_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(historypage.this, emergencypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(historypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         history_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(historypage.this, historypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(historypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         car_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(historypage.this, vehiclespage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(historypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
     }

@@ -23,13 +23,13 @@ public class LoginRegister extends AppCompatActivity {
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent(LoginRegister.this, registerpage.class);
-            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_zoom_enter, R.anim.animate_zoom_exit);
             startActivity(intent, options.toBundle());
         });
 
         loginButton.setOnClickListener(v -> {
             Intent intent = new Intent(LoginRegister.this, loginpage.class);
-            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(LoginRegister.this, R.anim.animate_zoom_enter, R.anim.animate_zoom_exit);
             startActivity(intent, options.toBundle());
         });
 

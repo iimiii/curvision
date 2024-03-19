@@ -1,10 +1,9 @@
 package com.example.intro;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,30 +21,24 @@ public class loginpage extends AppCompatActivity {
         TextView forgot_passwordButton = findViewById(R.id.forgot_password);
         TextView create_new_accountButton = findViewById(R.id.create_new_account);
 
-        ImageView googleBtn = findViewById(R.id.googleBtn);
-
-        ImageView facebookBtn = findViewById(R.id.facebookBtn);
-        facebookBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
 
         sign_inButton.setOnClickListener(v -> {
             Intent intent = new Intent(loginpage.this, homepage.class);
-            startActivity(intent);
+                ActivityOptions options = ActivityOptions.makeCustomAnimation(loginpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+                startActivity(intent, options.toBundle());
         });
 
         forgot_passwordButton.setOnClickListener(v -> {
             Intent intent = new Intent(loginpage.this, registerpage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(loginpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
         create_new_accountButton.setOnClickListener(v -> {
             Intent intent = new Intent(loginpage.this, registerpage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(loginpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
     }

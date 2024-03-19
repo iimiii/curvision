@@ -18,6 +18,8 @@ public class Introduction extends AppCompatActivity {
 
     private ActivityIntroBinding binding;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,4 +121,6 @@ public class Introduction extends AppCompatActivity {
             container.removeView((View) object);
         }
     }
+
+
 }

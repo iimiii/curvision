@@ -2,6 +2,7 @@ package com.example.intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -22,22 +23,26 @@ public class vehiclespage extends AppCompatActivity {
 
         home_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(vehiclespage.this, homepage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(vehiclespage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         emergency_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(vehiclespage.this, emergencypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(vehiclespage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         history_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(vehiclespage.this, historypage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(vehiclespage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
         car_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(vehiclespage.this, vehiclespage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(vehiclespage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
         });
 
     }

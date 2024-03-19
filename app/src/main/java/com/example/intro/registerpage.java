@@ -2,6 +2,7 @@ package com.example.intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,13 +21,15 @@ public class registerpage extends AppCompatActivity {
 
         sign_upButton.setOnClickListener(v -> {
             Intent intent = new Intent(registerpage.this, homepage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(registerpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
 
         already_have_an_accountButton.setOnClickListener(v -> {
             Intent intent = new Intent(registerpage.this, loginpage.class);
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(registerpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
+            startActivity(intent, options.toBundle());
         });
 
     }

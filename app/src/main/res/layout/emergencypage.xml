@@ -10,12 +10,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.05"
-        android:background="@drawable/mainfinal">
+        android:layout_weight="0.01"
+        android:background="@drawable/mainbgfinal">
 
         <ImageView
-            android:layout_width="125dp"
-            android:layout_height="112dp"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
 
@@ -30,7 +30,7 @@
             android:gravity="center"
             android:text="@string/emergency_contacts"
             android:textColor="@color/bg"
-            android:textSize="29sp"
+            android:textSize="20sp"
             tools:ignore="RelativeOverlap,TextSizeCheck" />
 
 
@@ -52,96 +52,96 @@
     </LinearLayout>
 
     <ScrollView
-    android:layout_width="350dp"
-    android:layout_height="330dp"
-    android:layout_gravity="center">
+        android:layout_width="350dp"
+        android:layout_height="390dp"
+        android:layout_gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        tools:ignore="UseCompoundDrawables">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="0dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/safety_precautions"
-                    android:textColor="#37474F"
-                    android:textSize="25sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/safety_precautions"
+                android:textColor="#37474F"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp1"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp2"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp2"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp3"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp3"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp4"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp4"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/sp5"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp5"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/sp6"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp6"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
 
-            </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -219,5 +219,5 @@
             android:layout_marginTop="13dp"
             android:contentDescription="@string/todo"/>
 
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

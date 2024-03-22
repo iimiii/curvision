@@ -10,30 +10,30 @@
     <RelativeLayout
         android:id="@+id/mainbg"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_weight="0.05"
-        android:background="@drawable/mainfinal">
+        android:layout_height="0dp"
+        android:layout_weight="0.04"
+        android:background="@drawable/mainbgfinal">
 
         <ImageView
-            android:layout_width="125dp"
-            android:layout_height="112dp"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
 
 
 
         <TextView
-            android:layout_width="271dp"
-            android:layout_height="81dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
             android:gravity="center"
             android:text="@string/welcome"
             android:textColor="@color/bg"
-            android:textSize="35sp"
-            tools:ignore="TextSizeCheck" />
+            android:textSize="20sp"
+            tools:ignore="RelativeOverlap,TextSizeCheck" />
 
 
 
@@ -179,8 +179,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/location"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/t1"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -188,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/location"
+                    android:text="@string/t2"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -196,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/location"
+                    android:text="@string/t3"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -204,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/location"
+                    android:text="@string/t4"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 

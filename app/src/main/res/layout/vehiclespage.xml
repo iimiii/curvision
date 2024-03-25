@@ -56,7 +56,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="420dp"
             android:layout_gravity="center">
 
             <LinearLayout
@@ -70,7 +70,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="300dp"
+                    android:layout_marginTop="400dp"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/frame2"
                     tools:ignore="ImageContrastCheck" />
@@ -139,15 +139,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            tools:ignore="TextSizeCheck">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:letterSpacing="0.3"
                 android:text="@string/drive_catiously"
-                android:textColor="@color/black"
-                android:letterSpacing="0.3"/>
+                android:textColor="@color/black" />
         </LinearLayout>
 
         </LinearLayout>
@@ -159,36 +160,39 @@
 
             <ImageView
                 android:id="@+id/home_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/home_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="15dp"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                android:src="@drawable/home_icon"
+                android:background="@drawable/ripple_effect" />
+
             <ImageView
                 android:id="@+id/emergency_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/emergency_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="15dp"
-                android:contentDescription="@string/todo"/>
+                android:contentDescription="@string/todo"
+                android:src="@drawable/emergency_icon"
+                android:background="@drawable/ripple_effect"/>
+
             <ImageView
                 android:id="@+id/history_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/history_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="15dp"
-                android:contentDescription="@string/todo"/>
+                android:contentDescription="@string/todo"
+                android:src="@drawable/history_icon"
+                android:background="@drawable/ripple_effect"/>
+
             <ImageView
                 android:id="@+id/car_icon"
-                android:layout_width="35dp"
-                android:layout_height="24dp"
-                android:src="@drawable/car_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="13dp"
-                android:contentDescription="@string/todo"/>
+                android:contentDescription="@string/todo"
+                android:src="@drawable/redcar"
+                android:background="@drawable/ripple_effect"/>
 
         </LinearLayout>
     </LinearLayout>

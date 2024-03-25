@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class homepage extends AppCompatActivity {
@@ -22,7 +23,6 @@ public class homepage extends AppCompatActivity {
         TextView avButton = findViewById(R.id.av);
         TextView ahButton = findViewById(R.id.ah);
         TextView ecButton = findViewById(R.id.ec);
-
 
 
         home_iconButton.setOnClickListener(v -> {
@@ -69,4 +69,5 @@ public class homepage extends AppCompatActivity {
 
 
     }
+
 }

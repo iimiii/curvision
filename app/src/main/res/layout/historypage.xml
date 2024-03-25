@@ -48,7 +48,7 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="460dp"
+        android:layout_height="525dp"
         android:layout_gravity="center">
 
         <LinearLayout
@@ -60,6 +60,7 @@
 
 
             <TextView
+                android:id="@+id/t11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -85,6 +86,39 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="@string/loc_des"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/loc_des2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/loc_des3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/loc_des4"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
@@ -116,6 +150,13 @@
                 android:textSize="15sp"
                 tools:ignore="SmallSp" />
 
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="380dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/l1" />
+
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
@@ -128,12 +169,7 @@
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
 
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="380dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l1" />
+
 
             <TextView
                 android:layout_width="350dp"
@@ -173,6 +209,13 @@
                 android:textSize="15sp"
                 tools:ignore="SmallSp" />
 
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/l7" />
+
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
@@ -185,12 +228,6 @@
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
 
-            <ImageView
-                android:layout_width="350dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l7" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -218,6 +255,13 @@
                 android:textSize="15sp"
                 tools:ignore="SmallSp" />
 
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/l3" />
+
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
@@ -230,12 +274,7 @@
                 android:textSize="20sp"
                 tools:ignore="TextSizeCheck" />
 
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="350dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l3" />
+
 
             <ImageView
                 android:layout_width="400dp"
@@ -269,36 +308,39 @@
 
         <ImageView
             android:id="@+id/home_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/home_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:src="@drawable/home_icon"
+            android:background="@drawable/ripple_effect" />
+
         <ImageView
             android:id="@+id/emergency_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/emergency_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo"/>
+            android:contentDescription="@string/todo"
+            android:src="@drawable/emergency_icon"
+            android:background="@drawable/ripple_effect"/>
+
         <ImageView
             android:id="@+id/history_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/history_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo"/>
+            android:contentDescription="@string/todo"
+            android:src="@drawable/redhistory"
+            android:background="@drawable/ripple_effect"/>
+
         <ImageView
             android:id="@+id/car_icon"
-            android:layout_width="35dp"
-            android:layout_height="24dp"
-            android:src="@drawable/car_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="13dp"
-            android:contentDescription="@string/todo"/>
+            android:contentDescription="@string/todo"
+            android:src="@drawable/car_icon"
+            android:background="@drawable/ripple_effect"/>
 
     </LinearLayout>
 </LinearLayout>

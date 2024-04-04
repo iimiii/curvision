@@ -25,9 +25,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="welcome">Welcome</string>
+    <string name="welcome">Welcome,</string>
     <string name="todo">TODO</string>
-    <string name="approaching_vehicles">Approaching Vehicles</string>
+    <string name="approaching_vehicles">List of <b>Approaching Vehicles</b></string>
     <string name="history_of_accidents">Accident History</string>
     <string name="emergency_contacts">Emergency Contacts</string>
     <string name="cdrrmo_danao_city">CDRRMO-Danao City</string>
@@ -90,11 +90,31 @@
         \n\nPolice Lieutenant Phil Restauro, chief of the Sogod Police Station, told reporters that the incident included an Autobus, two bus liners, including a medium-sized Ceres bus, an SUV, and a cargo truck.</string>
     <string name="loc_des2"> While some of those who were involved in the accident got minor injuries only, an old man identified as Garlito dela Cerna, who was just resting inside his house, died in the incident after one of the buses rammed into their house.
         \n\nRestauro said the incident is still under investigation, and possible cases of reckless driving resulting in homicide and damage to properties might be filed once the culprit of the collision is verified.</string>
-<string name="loc_des3"> According to the initial reports they had gathered, the autobus, SUV, and cargo truck were heading towards Northern Cebu (upwards) while the Ceres bus liners were going to Cebu City (downwards).
+    <string name="loc_des3"> According to the initial reports they had gathered, the autobus, SUV, and cargo truck were heading towards Northern Cebu (upwards) while the Ceres bus liners were going to Cebu City (downwards).
     \n\nHe said the SUV overtook the queue heading towards a blind curve, which the Ceres bus gave way.</string>
-<string name="loc_des4">Then, the autobus that came speedily was unable to hit its brake on time and crashed into the Ceres bus back portion, resulting in multiple collisions.
+    <string name="loc_des4">Then, the autobus that came speedily was unable to hit its brake on time and crashed into the Ceres bus back portion, resulting in multiple collisions.
     \n\n"Mao to ang Ceres ming padulong didto sa balay nya kadtung auto bus ming bangga pud sa kadtung auto nga gi lugwayan sa Ceres. Mao to napakung pakung na ang dagan kay gasunod gud," said Restauro.
     \n\nIn a statement issued on Wednesday, Sogod Mayor Lissa Marie "Moonyeen" Durano-Streegan said she was saddened by the incident.
     \n\nThe mayor urged motorists to be careful when driving, to prevent from any road mishaps. — Robhe Jane C. Yara, GAN (FREEMAN) </string>
+    <string name="explore_more_with_curvision">Explore More with\n<font color="#F6B923"><b>CurVision!</b></font></string>
+    <string name="explore">explore</string>
+    <string name="search">Search...</string>
+    <string name="news"><b>News</b></string>
+    <string name="see_all">See all</string>
+    <string name="wendell_damayo">Wendell Damayo</string>
+    <string name="name">Name</string>
+    <string name="satisfies_your_needs_rate_us">Satisfied your needs? Rate us!</string>
+    <string name="profile">Profile</string>
+
+    <string name="api_key">AIzaSyAJmRSCXQOUgjmNdskQ4TwLwTgvViW-xNA</string>
+    <string name="top_news"><b>Top News</b></string>
+    <string name="logo">logo</string>
+    <string name="data2">from <b><big>7,938</big></b> in 2011 to <b><big>11,096</big></b> in 2023</string>
+    <string name="data1">percentage deaths increased</string>
+    <string name="source">Data from: Philippines Statistics Authority (PSA)</string>
+
+    <string name="emergency_quote">Stay Sharp with\n<font color="#F6B923"><b>CurVision!</b></font></string>
+    <string name="logout">Logout</string>
+    <string name="update_profile">Update profile</string>
 
 </resources>

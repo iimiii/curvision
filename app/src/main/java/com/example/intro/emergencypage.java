@@ -17,9 +17,10 @@ public class emergencypage extends AppCompatActivity {
         setContentView(R.layout.emergencypage);
 
         ImageView home_iconButton = findViewById(R.id.home_icon);
-        ImageView emergency_iconButton = findViewById(R.id.emergency_icon);
         ImageView history_iconButton = findViewById(R.id.history_icon);
         ImageView car_iconButton = findViewById(R.id.car_icon);
+        ImageView loc_iconButton = findViewById(R.id.loc_icon);
+        ImageView prof_iconButton = findViewById(R.id.prof_icon);
 
 
         home_iconButton.setOnClickListener(v -> {
@@ -28,11 +29,6 @@ public class emergencypage extends AppCompatActivity {
             startActivity(intent, options.toBundle());
         });
 
-        emergency_iconButton.setOnClickListener(v -> {
-            Intent intent = new Intent(emergencypage.this, emergencypage.class);
-            ActivityOptions options = ActivityOptions.makeCustomAnimation(emergencypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
-            startActivity(intent, options.toBundle());
-        });
 
         history_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(emergencypage.this, historypage.class);
@@ -42,6 +38,18 @@ public class emergencypage extends AppCompatActivity {
 
         car_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(emergencypage.this, vehiclespage.class);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(emergencypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
+        });
+
+        loc_iconButton.setOnClickListener(v -> {
+            Intent intent = new Intent(emergencypage.this, mapspage.class);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(emergencypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
+        });
+
+        prof_iconButton.setOnClickListener(v -> {
+            Intent intent = new Intent(emergencypage.this, profilepage.class);
             ActivityOptions options = ActivityOptions.makeCustomAnimation(emergencypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
             startActivity(intent, options.toBundle());
         });

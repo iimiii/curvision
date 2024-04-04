@@ -1,334 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/bg">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:ignore="UseCompoundDrawables">
 
-    <RelativeLayout
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="35sp"
+        android:layout_marginStart="40dp"
+        android:text="@string/top_news"
+        android:textColor="@color/maroon"
+        android:fontFamily="sans-serif-black"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/cv_logo"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/logo"/>
+
+</LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.05"
-        android:background="@drawable/mainbgfinal">
+        android:layout_height="280dp"
+        android:layout_marginBottom="50dp"
+        android:padding="20dp"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
 
         <ImageView
-            android:layout_width="59dp"
-            android:layout_height="56dp"
-            android:src="@drawable/logo"
-            tools:ignore="ContentDescription" />
+            android:id="@+id/history1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/n1"
+            android:background="@drawable/ripple1"
+            android:padding="1dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/history2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/n2"
+            android:background="@drawable/ripple1"
+            android:padding="1dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/todo"/>
+
+            <ImageView
+                android:id="@+id/history3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/n3"
+                android:background="@drawable/ripple1"
+                android:padding="1dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/todo"/>
+
+            <ImageView
+                android:id="@+id/history4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/n4"
+                android:background="@drawable/ripple1"
+                android:padding="1dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/todo"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_fileName="number.json" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/history_of_accidents"
-            android:textColor="@color/bg"
-            android:textSize="20sp"
-            tools:ignore="RelativeOverlap,TextSizeCheck" />
+            android:text="@string/data1"
+            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
+            android:textColor="@color/black"/>
 
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/data2"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="23dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/line" />
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/source"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"/>
+
+
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="525dp"
-        android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights,UseCompoundDrawables">
-
-
-
-            <TextView
-                android:id="@+id/t11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/t1"
-                android:textColor="@color/black"
-                android:textSize="35sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/d1"
-                android:textColor="@color/grey1"
-                android:textSize="15sp"
-                tools:ignore="SmallSp" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="@string/loc_des"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="@string/loc_des2"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="@string/loc_des3"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="@string/loc_des4"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="23dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/line" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/t2"
-                android:textColor="@color/black"
-                android:textSize="35sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/d2"
-                android:textColor="@color/grey1"
-                android:textSize="15sp"
-                tools:ignore="SmallSp" />
-
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="380dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l1" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="20sp"
-                android:gravity="center"
-                android:text="@string/ah2"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="20sp"
-                android:gravity="center"
-                android:text="@string/ah3"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="23dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/line" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/t3"
-                android:textColor="@color/black"
-                android:textSize="35sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/d3"
-                android:textColor="@color/grey1"
-                android:textSize="15sp"
-                tools:ignore="SmallSp" />
-
-            <ImageView
-                android:layout_width="350dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l7" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="20sp"
-                android:gravity="center"
-                android:text="@string/ah4"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="23dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/line" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/t4"
-                android:textColor="@color/black"
-                android:textSize="35sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/d3"
-                android:textColor="@color/grey1"
-                android:textSize="15sp"
-                tools:ignore="SmallSp" />
-
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="350dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l3" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="20sp"
-                android:gravity="center"
-                android:text="@string/ah5"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-
-
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="350dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/l4" />
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25sp"
-                android:layout_marginBottom="20sp"
-                android:gravity="center"
-                android:text="@string/ah6"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                tools:ignore="TextSizeCheck" />
-
-
-
-        </LinearLayout>
-    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/frame3">
+        android:background="@drawable/frame3"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/home_icon"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/home_icon"
+            android:background="@drawable/ripple_effect" />
+
+        <ImageView
+            android:id="@+id/loc_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/loc_icon"
             android:background="@drawable/ripple_effect" />
 
         <ImageView
             android:id="@+id/emergency_icon"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
+            android:layout_marginEnd="40dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/emergency_icon"
             android:background="@drawable/ripple_effect"/>
 
         <ImageView
-            android:id="@+id/history_icon"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
+            android:layout_marginEnd="40dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/redhistory"
             android:background="@drawable/ripple_effect"/>
@@ -337,10 +183,17 @@
             android:id="@+id/car_icon"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="60dp"
+            android:layout_marginEnd="40dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/car_icon"
             android:background="@drawable/ripple_effect"/>
 
+        <ImageView
+            android:id="@+id/prof_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/prof"
+            android:background="@drawable/ripple_effect"/>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

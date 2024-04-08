@@ -1,13 +1,19 @@
 package com.example.intro;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,6 +45,8 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
     private List<Geofence> mGeofenceList;
     private PendingIntent geofencePendingIntent; // Declare here
 
+    private PopupWindow popupWindow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +73,20 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build());
 
+        initPopupWindow();
+
         ImageView home_iconButton = findViewById(R.id.home_icon);
         ImageView emergency_iconButton = findViewById(R.id.emergency_icon);
         ImageView history_iconButton = findViewById(R.id.history_icon);
         ImageView car_iconButton = findViewById(R.id.car_icon);
         ImageView prof_iconButton = findViewById(R.id.prof_icon);
+
+        ImageView infolocationButton = findViewById(R.id.infolocation);
+        infolocationButton.setOnClickListener(v -> {
+            if (popupWindow != null) {
+                popupWindow.showAtLocation(v, Gravity.TOP, 50, 50);
+            }
+        });
 
         home_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(mapspage.this, homepage.class);
@@ -103,6 +120,17 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         });
     }
 
+    private void initPopupWindow() {
+        @SuppressLint("InflateParams")
+        View popupView = LayoutInflater.from(this).inflate(R.layout.info_loc, null);
+        int width = 700;
+        int height = 800;
+        popupView.setLayoutParams(new ViewGroup.LayoutParams(width, height));
+        popupWindow = new PopupWindow(popupView, width, height);
+        popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+    }
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         // Enable user's location and zoom to current location
@@ -116,7 +144,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         // Add marker for the curve road
         LatLng curveRoadLatLng = new LatLng(10.796409472641445, 123.99460939973841);
         googleMap.addMarker(new MarkerOptions().position(curveRoadLatLng).title("Curve Road"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 15f));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 13f));
 
         LatLng geofenceCenter = new LatLng(10.796409472641445, 123.99460939973841); // Example coordinates
         float radius = 10; // in meters

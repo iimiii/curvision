@@ -1,11 +1,17 @@
 package com.example.intro;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.os.Handler;
 import android.widget.HorizontalScrollView;
+import android.widget.PopupWindow;
 
 
 
@@ -19,6 +25,8 @@ public class homepage extends AppCompatActivity {
     private final int scrollSpeed = 2; // Adjust scroll speed here
     private Handler handler;
 
+    private PopupWindow popupWindow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +36,8 @@ public class homepage extends AppCompatActivity {
         handler = new Handler();
 
         autoScroll();
+
+        initPopupWindow();
 
         ImageView loc_iconButton = findViewById(R.id.loc_icon);
         ImageView prof_iconButton = findViewById(R.id.prof_icon);
@@ -39,6 +49,12 @@ public class homepage extends AppCompatActivity {
         ImageView news3Button = findViewById(R.id.news3);
         ImageView news4Button = findViewById(R.id.news4);
 
+        ImageView notification_iconButton = findViewById(R.id.notification_icon);
+        notification_iconButton.setOnClickListener(v -> {
+            if (popupWindow != null) {
+                popupWindow.showAtLocation(v, Gravity.TOP, 0, 0);
+            }
+        });
 
 
         loc_iconButton.setOnClickListener(v -> {
@@ -97,6 +113,18 @@ public class homepage extends AppCompatActivity {
 
 
 
+    }
+
+    private void initPopupWindow() {
+        @SuppressLint("InflateParams")
+        View popupView = LayoutInflater.from(this).inflate(R.layout.notif_popup, null);
+        int width = 900;
+        int height = 200;
+        popupView.setLayoutParams(new ViewGroup.LayoutParams(width, height));
+        popupWindow = new PopupWindow(popupView, width, height);
+        popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
     }
 
     private void autoScroll() {

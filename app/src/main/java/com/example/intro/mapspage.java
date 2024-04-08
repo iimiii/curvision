@@ -60,7 +60,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         // Define curve road geofence parameters
         mGeofenceList.add(new Geofence.Builder()
                 .setRequestId("CurveRoad")
-                .setCircularRegion(10.382647, 124.007164, 10)
+                .setCircularRegion(10.796488501166039, 123.99457851460627, 10)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build());
@@ -114,11 +114,11 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Add marker for the curve road
-        LatLng curveRoadLatLng = new LatLng(10.382647, 124.007164);
+        LatLng curveRoadLatLng = new LatLng(10.796409472641445, 123.99460939973841);
         googleMap.addMarker(new MarkerOptions().position(curveRoadLatLng).title("Curve Road"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 15f));
 
-        LatLng geofenceCenter = new LatLng(10.382647, 124.007164); // Example coordinates
+        LatLng geofenceCenter = new LatLng(10.796409472641445, 123.99460939973841); // Example coordinates
         float radius = 10; // in meters
         googleMap.addCircle(new CircleOptions()
                 .center(geofenceCenter)

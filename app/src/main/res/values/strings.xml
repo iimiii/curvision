@@ -5,7 +5,7 @@
     <string name="intro_title_1">Indicate Approaching\nVehicle</string>
     <string name="intro_des_1">Foresee approaching vehicle in\nblind curve area</string>
     <string name="intro_title_2">Locate Blind\nCurve Risk</string>
-    <string name="intro_des_2">Provides alarm and indicator system\nin terms of possible hazard</string>
+    <string name="intro_des_2">Provides notification and indicator system\nin terms of possible hazard</string>
     <string name="intro_title_3">Monitor\nSpeed (kmph)</string>
     <string name="intro_des_3">Track vehicle speed</string>
     <string name="h1">Innovation meets\nsafety with\nCurVision</string>
@@ -98,7 +98,7 @@
     \n\nThe mayor urged motorists to be careful when driving, to prevent from any road mishaps. — Robhe Jane C. Yara, GAN (FREEMAN) </string>
     <string name="explore_more_with_curvision">Explore More with\n<font color="#F6B923"><b>CurVision!</b></font></string>
     <string name="explore">explore</string>
-    <string name="search">Search...</string>
+    <string name="search">Search…</string>
     <string name="news"><b>News</b></string>
     <string name="see_all">See all</string>
     <string name="wendell_damayo">Wendell Damayo</string>
@@ -116,5 +116,6 @@
     <string name="emergency_quote">Stay Sharp with\n<font color="#F6B923"><b>CurVision!</b></font></string>
     <string name="logout">Logout</string>
     <string name="update_profile">Update profile</string>
+    <string name="notif">No notification available…</string>
 
 </resources>

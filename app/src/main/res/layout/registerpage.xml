@@ -40,7 +40,9 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
+        <!-- Inside the TextInputLayout for email -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_input_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -51,11 +53,11 @@
             app:hintEnabled="true"
             app:boxBackgroundColor="@color/yellow"
             app:boxStrokeColor="#680216"
-            app:boxStrokeErrorColor="#FF0000"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/maroon">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -65,10 +67,11 @@
                 android:textColor="@color/black"
                 android:textColorHint="#201D1D" />
 
-
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Inside the TextInputLayout for password -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -79,11 +82,11 @@
             app:hintEnabled="true"
             app:boxBackgroundColor="@color/yellow"
             app:boxStrokeColor="#680216"
-            app:boxStrokeErrorColor="#FF0000"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/maroon">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -95,7 +98,9 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Inside the TextInputLayout for confirm password -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmpassword_input_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -106,11 +111,11 @@
             app:hintEnabled="true"
             app:boxBackgroundColor="@color/yellow"
             app:boxStrokeColor="#680216"
-            app:boxStrokeErrorColor="#FF0000"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/maroon">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -121,6 +126,7 @@
                 android:textColorHint="#201D1D" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
     </LinearLayout>
 
@@ -191,6 +197,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/google_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/google_icon"

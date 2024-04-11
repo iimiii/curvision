@@ -1,8 +1,10 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="220dp"
-    android:height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="250dp"
+    android:height="70dp"
     android:viewportWidth="220"
-    android:viewportHeight="60">
+    android:viewportHeight="85"
+    tools:ignore="VectorRaster">
     <path
         android:fillColor="#FFEFEFEF"
         android:pathData="M32.5 5c0-2.49 2.01-4.5 4.5-4.5h178c2.49 0 4.5 2.01 4.5 4.5v25c0 2.49-2.01 4.5-4.5 4.5h-178c-2.49 0-4.5-2.01-4.5-4.5z"/>
@@ -17,4 +19,9 @@
         android:pathData="M25 10.5A24.5 24.5 0 1 0 25 59.5 24.5 24.5 0 1 0 25 10.5z"/>
     <path
         android:pathData="M13 23H37V47H13z"/>
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
 </vector>

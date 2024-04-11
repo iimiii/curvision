@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/bg">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/cv_logo"
+        android:contentDescription="@string/todo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textColor="@color/black"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:lottie_fileName="profile.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="40dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints="true"
+        android:background="@drawable/frame4"
+        android:elevation="5dp"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:enabled="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey1"/>
+
+    <EditText
+        android:id="@+id/profile_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints="true"
+        android:background="@drawable/frame4"
+        android:elevation="5dp"
+        android:enabled="true"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="TextFields"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey1"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame4"
+            android:text="@string/update_profile" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:indeterminateTint="@color/maroon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:text="@string/logout"
+            android:textColor="#616161" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/frame3"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/home_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/home_icon"
+                android:background="@drawable/ripple_effect" />
+
+            <ImageView
+                android:id="@+id/loc_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/loc_icon"
+                android:background="@drawable/ripple_effect" />
+
+            <ImageView
+                android:id="@+id/emergency_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/emergency_icon"
+                android:background="@drawable/ripple_effect"/>
+
+            <ImageView
+                android:id="@+id/history_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/history_icon"
+                android:background="@drawable/ripple_effect"/>
+
+            <ImageView
+                android:id="@+id/car_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/car_icon"
+                android:background="@drawable/ripple_effect"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/ripple_effect"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/profred"
+                tools:ignore="ImageContrastCheck" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

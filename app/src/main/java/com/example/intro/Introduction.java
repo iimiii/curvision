@@ -2,17 +2,19 @@ package com.example.intro;
 
 import android.content.Context;
 import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.content.res.AppCompatResources;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.example.intro.databinding.ActivityIntroBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Introduction extends AppCompatActivity {
 
@@ -21,6 +23,15 @@ public class Introduction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Check if the user is already logged in
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            // User is already logged in, navigate to the homepage
+            navigateToHomePage();
+            return; // Finish the current activity to prevent returning to it
+        }
+
         binding = ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -40,27 +51,7 @@ public class Introduction extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                    case 1:
-                        binding.actionText.setText(getString(R.string.next));
-                        binding.actionText.setCompoundDrawablesWithIntrinsicBounds(
-                                null,
-                                null,
-                                AppCompatResources.getDrawable(Introduction.this, R.drawable.ic_arrow_right_double),
-                                null
-                        );
-                        break;
-                    case 2:
-                        binding.actionText.setText(getString(R.string.start));
-                        binding.actionText.setCompoundDrawablesWithIntrinsicBounds(
-                                null,
-                                null,
-                                AppCompatResources.getDrawable(Introduction.this, R.drawable.ic_arrow_right_single),
-                                null
-                        );
-                        break;
-                }
+                // Optional: You can add code here if needed
             }
 
             @Override
@@ -79,6 +70,7 @@ public class Introduction extends AppCompatActivity {
                     break;
                 case 2:
                     startActivity(new Intent(Introduction.this, LoginRegister.class));
+                    overridePendingTransition(R.anim.animate_fade_enter, R.anim.animate_fade_exit);
                     break;
             }
         });
@@ -117,5 +109,11 @@ public class Introduction extends AppCompatActivity {
         public void destroyItem(ViewGroup container, int position, @NonNull Object object) {
             container.removeView((View) object);
         }
+    }
+
+    private void navigateToHomePage() {
+        Intent intent = new Intent(Introduction.this, homepage.class);
+        startActivity(intent);
+        finish(); // Finish the activity to prevent returning to it
     }
 }

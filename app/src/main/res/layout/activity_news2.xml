@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".news_1"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/back2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_icon"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/todo"/>
+
+        <TextView
+            android:id="@+id/t11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/t2"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/d2"
+            android:textColor="@color/grey1"
+            android:textSize="15sp"
+            tools:ignore="SmallSp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/l1"
+            android:contentDescription="@string/todo"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights,UseCompoundDrawables">
+
+
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp"
+                android:gravity="center"
+                android:text="@string/ah2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TextSizeCheck" />
+
+
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp"
+                android:gravity="center"
+                android:text="@string/ah3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TextSizeCheck" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

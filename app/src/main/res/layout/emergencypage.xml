@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,210 +10,238 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:background="@drawable/main_background">
-
-
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="112dp"
-            android:src="@drawable/logo"
-            tools:ignore="ContentDescription" />
+        android:layout_height="150dp"
+        android:background="@color/maroon">
 
         <TextView
-            android:layout_width="271dp"
-            android:layout_height="81dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/emergency_quote"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            tools:ignore="RelativeOverlap" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="0dp"
-            android:gravity="center"
-            android:text="@string/emergency_contacts"
-            android:textColor="@color/bg"
-            android:textSize="29sp"
-            tools:ignore="TextSizeCheck" />
+            app:lottie_fileName="emergency.json" />
 
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_marginStart="50dp"
-            android:textStyle="bold"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:text="@string/cdrrmo_danao_city"
-            tools:ignore="RelativeOverlap" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="250sp"
-            android:layout_marginStart="100dp"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:text="@string/_0930_822_7211"
-            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 
-    <ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="430dp"
-    android:layout_gravity="center">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        tools:ignore="UseCompoundDrawables">
-
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/line"
             tools:ignore="ImageContrastCheck" />
+    </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="0dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/safety_precautions"
-                    android:textColor="#37474F"
-                    android:textSize="25sp" />
+    <ScrollView
+        android:layout_width="350dp"
+        android:layout_height="440dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp1"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp2"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp3"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/sp4"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    tools:ignore="TextSizeCheck" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/safety_precautions"
+                android:textColor="#37474F"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp2"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp3"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp4"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp5"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/sp6"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/sp5"
+            android:text="@string/cdrrmo_danao_city"
             android:textColor="@color/black"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
             android:textSize="15sp"
-            tools:ignore="TextSizeCheck" />
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/sp6"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="34dp"
+            android:text="@string/_0930_822_7211"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            tools:ignore="TextSizeCheck" />
-
-            </LinearLayout>
-</ScrollView>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginEnd="20dp">
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap,SmallSp" />
 
         <ImageView
             android:id="@+id/callButton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:contentDescription="@string/todo"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/call"
             tools:ignore="ImageContrastCheck" />
-    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/frame3">
+        android:background="@drawable/frame3"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/home_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/home_icon"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo" />
+            android:background="@drawable/ripple_effect" />
+
         <ImageView
-            android:id="@+id/emergency_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/emergency_icon"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo"/>
+            android:id="@+id/loc_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/loc_icon"
+            android:background="@drawable/ripple_effect" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/redemergency"
+            android:background="@drawable/ripple_effect"/>
+
         <ImageView
             android:id="@+id/history_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/history_icon"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/todo"/>
+            android:background="@drawable/ripple_effect"/>
+
         <ImageView
             android:id="@+id/car_icon"
-            android:layout_width="35dp"
-            android:layout_height="24dp"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/car_icon"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="13dp"
-            android:contentDescription="@string/todo"/>
+            android:background="@drawable/ripple_effect"/>
 
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/prof_icon"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/prof"
+            android:background="@drawable/ripple_effect"/>
+    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

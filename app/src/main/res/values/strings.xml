@@ -25,9 +25,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="welcome">WELCOME</string>
+    <string name="welcome">Welcome,</string>
     <string name="todo">TODO</string>
-    <string name="approaching_vehicles">Approaching Vehicles</string>
+    <string name="approaching_vehicles">List of <b>Approaching Vehicles</b></string>
     <string name="history_of_accidents">Accident History</string>
     <string name="emergency_contacts">Emergency Contacts</string>
     <string name="cdrrmo_danao_city">CDRRMO-Danao City</string>
@@ -38,13 +38,87 @@
     <string name="sp3"><b>Keep a Safe Distance:</b> Maintain a\nsafe distance from the vehicle in\nfront of you, allowing ample time to\nstop or maneuver if needed.</string>
     <string name="sp4"><b>Look Ahead:</b> Try to anticipate the\ncurvature of the road by looking as\nfar ahead as possible.</string>
     <string name="sp5"><b>Stay Sober:</b> Never drive under the\ninfluence of alcohol or drug.</string>
-    <string name="location"><b>Location:</b> Binongkalan, Catmon, Cebu</string>
-    <string name="loc_des">Received info at around 8:20AM more or less about a Vehicular Accident at Binongkalan, Catmon, Cebu arrived at the area aroubd 8:30AM more or less. Binongkalan is about 12 klm away from Town Proper, naabot didto sa area pero nadala na ang mga pasyente padulong sa Danao.</string>
-    <string name="sp6"><b>Watch for Warning Signs:</b> Pay attention to any warning signs or road markings indicating the presence of blind curves ahead.</string>
-    <string name="ah2">LOOK: A vehicular accident figured in Binongkalan, Catmon, Cebu (Tuesday) -TheFreeman</string>
-    <string name="d1">Monday, August 21, 2017 at 9:47AM</string>
-    <string name="d2">Wednesday, March 28, 2018 at 7:22AM</string>
+    <string name="t1"><b>1 Died in a 5-vehicle Sogod Road Collision</b></string>
+    <string name="sp6"><b>Watch for Warning Signs:</b> Pay attention to any warning signs indicating the presence of blind curves ahead.</string>
+    <string name="t2"><b>Sogod accident: 2 injured after SUV driver falls asleep</b></string>
+    <string name="ah2">CEBU CITY, Philippines – Two persons were injured in a vehicular accident that happened along the national highway in Barangay Liki in Sogod, Cebu on Sunday morning, June 11.
+        \n\nAccording to the police, the accident happened after the driver of a sports utility vehicle (SUV) fell asleep, encroached the opposite lane of the national highway, and hit an approaching pickup truck.
+        \n\nThe pickup truck driver, who was identified as Cerilo Villarba, 65, and his companions, Kevin Gonzales, 30, suffered injuries on their legs and head from the impact, according to Police Staff Sergeant Dennis Pepito, traffic investigator of the Sogod Police Station.
+        \n\nPepito said SUV driver Bonifacio Bilongilot Jr., 64 and a resident of Angeles City, Pampanga, was traveling from Cebu City to Tabuelan town when the accident happened at 7:45 a.m.</string>
+    <string name="d1">Thurday, December 1, 2022 at 12:00AM</string>
+    <string name="d2">Sunday, June 11, 2023 at 6:30PM</string>
     <string name="see_more">see more</string>
     <string name="list">List of Approaching Vehicles</string>
     <string name="call">CALL</string>
+    <string name="drive_catiously">D r i v e  ||  C a t i o u s l y</string>
+    <string name="ah3"> On the other hand, Villarba was travelling from Tuburan town on its way to Carmen town in northern Cebu.
+        \n\nVillarba is a resident of Barangay Dawis Norte in Carmen town.
+        \n\nAccording to Pepito, Villarba and Gonzales were brought to the Sogod District Hospital for the treatment of their injuries.  His attending physician has recommended for Villarba’s transferred to a hospital in Cebu City.
+        \n\nPepito said that during their investigation, Bilongilot admitted that he fell asleep while driving his SUV, the reason for the accident.
+        \n\nThe driver also made the same admission when he spoke to Villarba’s daughter, Jeslyn Tero, when she arrived at the site of the accident, Pepito added.
+        \n\nDuring their conversation, Bilongilot, according to Pepito made an offer that they settle amicably with a promise to shoulder Villarbas’ medical bills, including that of Gonzales.
+        \n\nBilongilot, Pepito said, also made a promise to pay for the damages that he caused on Villarba’s vehicle.
+        \n\nPepito said that Tero has decided to accept Bilongilot’s offer on her father’s behalf.
+        \n\nSogod town is located approximately 60 kilometers north of Cebu City.</string>
+    <string name="t3"><b>Tanod dies, several injured in multiple vehicle collision in Sogod</b></string>
+    <string name="d3"><b>Wednesday, November 30, 2022 at 9:40PM</b></string>
+    <string name="ah4">A BARANGAY tanod died while several others got injured in a multiple vehicle collision in Barangay Liki, Sogod town, northern Cebu on Wednesday at 11:10 a.m., November 30.
+        \n\nThe 66-year-old barangay tanod of Liki, Garlito Dela Cerna, was standing along the roadside when he was hit by a Ceres Bus driven by Dindo Dizon, 47, of Tabuelan town.
+        \n\nHe was rushed to Sogod hospital but declared dead later at 2 p.m.
+        \n\nDindo was reportedly traveling towards Cebu City when he slowed down and applied a brake to give way to a Geely vehicle driven by Benny Lumapas, of Barangay Polpogan, Consolacion town, but was hit instead by the speeding another passenger bus, Autobus, driven by Joseph Rabadan, of Barangay Pitogo, Consolacion who was following him.
+        \n\nThe impact sent the Ceres bus to unknown direction and eventually ploughed a house along the roadside.
+        \n\nRabadan also hit the Geely sports utility vehicle, causing a domino effect that also damaged a Toyota Hilux pick-up maneuvered by Roy Boocz of Sta. Fe town in northern Cebu and a boom truck driven by Arnel Rom of Barangay Pitogo, Consolacion.
+        \n\n"Paglihay sa Ceres Bus, diretso sa pagbrake ang driver unya kusog man ang nagsunod nga Autobus maayong pagkadaro," Sogod Police Station chief Lieutenant Phil Restauro said in an interview with SunStar Cebu.
+        \n\n(The Ceres Bus evaded and its driver immediately applied a brake, but the Autobus that was running very fast ploughed the bus ahead).
+        \n\nThe injured passengers were:\nPorferio Guerrero Pabuaya, 64, of Ubay, Bohol;\nJohn Clourenz Lumingkit, 22, single, of Barangy Dakit, Sogod;\nAlexis Karyle Lumingkit Flores, 17, of Barangay Dakit; \nCheraime Mondejar Magpuyo,19, of Barangay Tuminhaw, Tuburan town;\nApril Kyle Latorre, 18, single, of Barangay Liki;\nDindo Dizon, 47, driver of Ceres Bus.
+        \n\nThe passengers only sustained minor injuries.
+        \n\nRestauro said several road accidents have already been recorded in the area because there is a portion there that has downhill and blind curves.
+        \n\nThe drivers of vehicles involved are temporarily placed under the custody of Sogod Police Station.
+        \n\nBased on their investigation, the police found out that the driver of Autobus was the one at fault.</string>
+    <string name="t4"><b>Lolo killed, 11 others injured in Sogod, Cebu accident</b></string>
+    <string name="ah5">(UPDATED) CEBU CITY, Philippines — A senior citizen died after his house was rammed by a bus involved in a five-vehicle smashup along the national road in Barangay Liki in Sogod town on Wednesday, November 30, 2022.
+        \n\nEleven others were also injured in the vehicular accident that happened around 11 a.m.
+        \n\nSogod Mayor Lissa Marie Durano-Streegan confirmed in her post the death of Garlito dela Cerna, 66, a resident of Barangay Liki.
+        \n\nDela Cerna was inside his house when it was rammed by a bus that was also involved in a multiple-vehicle accident that included an Autobus, A Ceres bus, a Geely Coolray SUV, a Toyota Hilux pickup truck, and an Isuzu Boom Truck.</string>
+    <string name="ah6">The injured were identified by police as April Kyle Latorre, Ceres bus passengers Porperio Pabuaya, John Clourenz Lumingkit,  Alexis Karyle Flores, and Cheraime Magpuyo, and Autobus passengers Darl Jemine,  Luzviminda Tancinco, and Rommel Pagatpat.
+        \n\nThe drivers of both buses, Dindo Dizon (Ceres bus), and Joseph Mahinay Rabadon (Autobus) were also injured.
+        \n\nLester Cagampang, the conductor of the Ceres bus was among the injured, too.
+        \n\nBased on investigation conducted by  PMSG Teogenes Flores, traffic investigator of Sogod Police, the Autobus driven by Rabadon hit the Ceres bus driven by Dizon while both buses were headed towards Cebu City.
+        \n\n“Base sa imbestigasyon sa kapolisan, ang Autobus nga padulong South nibangga sa nag-una niini nga Ceres Bus nga maoy hinungdan nga ni-sidesweep ang Autobus sa pikas lane ug ni-bangga sa Geely SUV nga ni-bangga sab ngadto sa Hilux ug Isuzu Boom Truck,” Durano-Streegan said in her post.
+        \n\n“Ang pag-bangga sa Autobus sa Ceres Bus maoy hinungdan nga ang Ceres nawad-an og control ug ni-bangga sa panimalay ni Garlito dela Cerna,” another portion of her post reads.</string>
+    <string name="loc_des">CEBU, Philippines —  At least five vehicles were involved in a mid-day collision yesterday along the road in Barangay Liki, Sogod, Cebu, which resulted in one death.
+        \n\nPolice Lieutenant Phil Restauro, chief of the Sogod Police Station, told reporters that the incident included an Autobus, two bus liners, including a medium-sized Ceres bus, an SUV, and a cargo truck.</string>
+    <string name="loc_des2"> While some of those who were involved in the accident got minor injuries only, an old man identified as Garlito dela Cerna, who was just resting inside his house, died in the incident after one of the buses rammed into their house.
+        \n\nRestauro said the incident is still under investigation, and possible cases of reckless driving resulting in homicide and damage to properties might be filed once the culprit of the collision is verified.</string>
+    <string name="loc_des3"> According to the initial reports they had gathered, the autobus, SUV, and cargo truck were heading towards Northern Cebu (upwards) while the Ceres bus liners were going to Cebu City (downwards).
+    \n\nHe said the SUV overtook the queue heading towards a blind curve, which the Ceres bus gave way.</string>
+    <string name="loc_des4">Then, the autobus that came speedily was unable to hit its brake on time and crashed into the Ceres bus back portion, resulting in multiple collisions.
+    \n\n"Mao to ang Ceres ming padulong didto sa balay nya kadtung auto bus ming bangga pud sa kadtung auto nga gi lugwayan sa Ceres. Mao to napakung pakung na ang dagan kay gasunod gud," said Restauro.
+    \n\nIn a statement issued on Wednesday, Sogod Mayor Lissa Marie "Moonyeen" Durano-Streegan said she was saddened by the incident.
+    \n\nThe mayor urged motorists to be careful when driving, to prevent from any road mishaps. — Robhe Jane C. Yara, GAN (FREEMAN) </string>
+    <string name="explore_more_with_curvision">Explore More with\n<font color="#F6B923"><b>CurVision!</b></font></string>
+    <string name="explore">explore</string>
+    <string name="search">Search...</string>
+    <string name="news"><b>News</b></string>
+    <string name="see_all">See all</string>
+    <string name="wendell_damayo">Wendell Damayo</string>
+    <string name="name">Name</string>
+    <string name="satisfies_your_needs_rate_us">Satisfied your needs? Rate us!</string>
+    <string name="profile">Profile</string>
+
+    <string name="api_key">AIzaSyAJmRSCXQOUgjmNdskQ4TwLwTgvViW-xNA</string>
+    <string name="top_news"><b>Top News</b></string>
+    <string name="logo">logo</string>
+    <string name="data2">from <b><big>7,938</big></b> in 2011 to <b><big>11,096</big></b> in 2023</string>
+    <string name="data1">percentage deaths increased</string>
+    <string name="source">Data from: Philippines Statistics Authority (PSA)</string>
+
+    <string name="emergency_quote">Stay Sharp with\n<font color="#F6B923"><b>CurVision!</b></font></string>
+    <string name="logout">Logout</string>
+    <string name="update_profile">Update profile</string>
+
+    <string name="default_web_client_id">191215156615-409gl616ea73iuphktj7dakv4i1s7i4g.apps.googleusercontent.com</string>
+    <string name="left_lane"><b>Left Lane</b>\n(Speed)</string>
+    <string name="right_lane"><b>Right Lane</b>\n(Speed)</string>
+
 </resources>

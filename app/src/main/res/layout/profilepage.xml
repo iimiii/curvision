@@ -33,37 +33,27 @@
         android:scaleType="centerCrop"
         android:layout_marginBottom="40dp"/>
 
-    <EditText
+    <TextView
+        android:id="@+id/name_user"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:autofillHints="true"
-        android:background="@drawable/frame4"
-        android:elevation="5dp"
-        android:hint="@string/name"
-        android:inputType="text"
-        android:minHeight="48dp"
         android:padding="10dp"
-        android:enabled="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey1"/>
+        android:text="@string/name1"
+        android:textSize="20sp"
+        android:background="@drawable/frame4"
+        android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/profile_phone"
+    <TextView
+        android:id="@+id/email_user"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:autofillHints="true"
-        android:background="@drawable/frame4"
-        android:elevation="5dp"
-        android:enabled="true"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
         android:padding="10dp"
-        tools:ignore="TextFields"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey1"/>
+        android:text="@string/email1"
+        android:textSize="20sp"
+        android:background="@drawable/frame4"
+        android:textColor="@color/black"/>
 
 
     <RelativeLayout
@@ -72,17 +62,7 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/frame4"
-            android:text="@string/update_profile" />
 
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:indeterminateTint="@color/maroon" />
 
         <TextView
             android:layout_width="match_parent"

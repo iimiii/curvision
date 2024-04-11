@@ -49,5 +49,8 @@ public class profilepage extends AppCompatActivity {
             ActivityOptions options = ActivityOptions.makeCustomAnimation(profilepage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
             startActivity(intent, options.toBundle());
         });
+
+
     }
+
 }

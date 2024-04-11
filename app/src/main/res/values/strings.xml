@@ -123,4 +123,10 @@
     <string name="loc3">10.796449, 123.994576</string>
     <string name="loc4">Known as \'The Lethal Road\', this stretch has witnessed numerous fatal accidents, its sharp curves and hidden hazards making it a perilous passage. Despite its scenic allure, it demands utmost caution from drivers, as its treacherous twists offer little room for error.</string>
 
+    <string name="default_web_client_id">191215156615-409gl616ea73iuphktj7dakv4i1s7i4g.apps.googleusercontent.com</string>
+    <string name="left_lane"><b>Left Lane</b>\n(Speed)</string>
+    <string name="right_lane"><b>Right Lane</b>\n(Speed)</string>
+    <string name="name1">Name:</string>
+    <string name="email1">Email:</string>
+
 </resources>

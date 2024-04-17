@@ -121,4 +121,15 @@
     <string name="left_lane"><b>Left Lane</b>\n(Speed)</string>
     <string name="right_lane"><b>Right Lane</b>\n(Speed)</string>
 
+    <string name="curvision"><b><font color="#680216">Curve</font><font color="#F6B923">Vision</font></b></string>
+    <string name="loc">Barangay Liki, Sogod, Cebu</string>
+    <string name="loc2">Central Nautical Hwy, Cebu</string>
+    <string name="loc3">10.796449, 123.994576</string>
+    <string name="loc4">Known as \'The Lethal Road\', this stretch has witnessed numerous fatal accidents, its sharp curves and hidden hazards making it a perilous passage. Despite its scenic allure, it demands utmost caution from drivers, as its treacherous twists offer little room for error.</string>
+    <string name="call_911">Call: 911</string>
+    <string name="nationwide_emergency_hotline">Nationwide Emergency Hotline</string>
+    <string name="call_09958736046">Call: 09958736046</string>
+    <string name="_911">911</string>
+    <string name="_09958736046">09958736046</string>
+
 </resources>

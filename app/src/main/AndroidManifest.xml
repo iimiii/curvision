@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.intro">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -15,6 +19,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
 
     <application
         android:allowBackup="true"
@@ -84,12 +90,19 @@
             android:value="AIzaSyAJmRSCXQOUgjmNdskQ4TwLwTgvViW-xNA"/>
 
         <receiver android:name=".broadcastreceiver"
-            android:enabled="true"
-            android:exported="false">
+            android:exported="true"
+            android:permission="TODO">
             <intent-filter>
                 <action android:name="GEOFENCE_TRANSITION" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="broadcastreceiver"
+            android:foregroundServiceType="location"
+            tools:ignore="ForegroundServicePermission" >
+        <!-- Any inner elements would go here. -->
+    </service>
 
     </application>
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_911"
+        android:title="@string/call_911" />
+    <item
+        android:id="@+id/menu_custom"
+        android:title="@string/call_09958736046" />
+</menu>

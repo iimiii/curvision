@@ -131,5 +131,7 @@
     <string name="call_09958736046">Call: 09958736046</string>
     <string name="_911">911</string>
     <string name="_09958736046">09958736046</string>
+    <string name="vehicles_going_to_north"><b>VEHICLES GOING TO NORTH</b></string>
+    <string name="vehicles_going_to_south"><b>VEHICLES GOING TO SOUTH</b></string>
 
 </resources>

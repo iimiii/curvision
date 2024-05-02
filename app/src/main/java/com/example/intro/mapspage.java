@@ -68,7 +68,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         // Define curve road geofence parameters
         mGeofenceList.add(new Geofence.Builder()
                 .setRequestId("CurveRoad")
-                .setCircularRegion(10.321379, 123.913243, 30)
+                .setCircularRegion(10.320109, 123.929121, 30)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build());
@@ -143,11 +143,11 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Add marker for the curve road
-        LatLng curveRoadLatLng = new LatLng(10.321378, 123.913242);
+        LatLng curveRoadLatLng = new LatLng(10.320109, 123.929121);
         googleMap.addMarker(new MarkerOptions().position(curveRoadLatLng).title("Curve Road"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 15f));
 
-        LatLng geofenceCenter = new LatLng(10.321378, 123.913242); // Example coordinates
+        LatLng geofenceCenter = new LatLng(10.320109, 123.929121); // Example coordinates
         float radius = 30; // in meters
         googleMap.addCircle(new CircleOptions()
                 .center(geofenceCenter)
@@ -186,10 +186,10 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
 
 
     private GeofencingRequest getGeofencingRequest() {
-        return new GeofencingRequest.Builder()
-                .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
-                .addGeofences(mGeofenceList)
-                .build();
+        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+        builder.addGeofences(mGeofenceList);
+        return builder.build();
     }
 
     private PendingIntent getGeofencePendingIntent() {

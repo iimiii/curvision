@@ -101,7 +101,6 @@
             android:name="broadcastreceiver"
             android:foregroundServiceType="location"
             tools:ignore="ForegroundServicePermission" >
-        <!-- Any inner elements would go here. -->
     </service>
 
     </application>

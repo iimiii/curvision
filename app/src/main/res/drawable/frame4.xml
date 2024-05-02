@@ -7,7 +7,7 @@
         android:fillColor="#FFEFEFEF"
         android:pathData="M0.5 5c0-2.49 2.01-4.5 4.5-4.5h178c2.49 0 4.5 2.01 4.5 4.5v25c0 2.49-2.01 4.5-4.5 4.5h-178c-2.49 0-4.5-2.01-4.5-4.5z"/>
     <path
-        android:strokeColor="#FF680216"
+        android:strokeColor="#FFEFEFEF"
         android:strokeWidth="1"
         android:pathData="M0.5 5c0-2.49 2.01-4.5 4.5-4.5h178c2.49 0 4.5 2.01 4.5 4.5v25c0 2.49-2.01 4.5-4.5 4.5h-178c-2.49 0-4.5-2.01-4.5-4.5z"/>
 </vector>

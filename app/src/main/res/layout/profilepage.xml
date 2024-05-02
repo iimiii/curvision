@@ -24,46 +24,42 @@
         android:text="@string/profile"
         android:textColor="@color/black"/>
 
-    <com.airbnb.lottie.LottieAnimationView
+    <ImageView
+        android:id="@+id/profile_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        app:lottie_fileName="profile.json"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
+        android:src="@drawable/profile_placeholder"
         android:scaleType="centerCrop"
         android:layout_marginBottom="40dp"/>
 
-    <EditText
+    <TextView
+        android:id="@+id/profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:autofillHints="true"
         android:background="@drawable/frame4"
         android:elevation="5dp"
         android:hint="@string/name"
-        android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:enabled="true"
+        android:gravity="center"
         android:textColor="@color/black"
-        android:textColorHint="@color/grey1"/>
+        android:textColorHint="@color/grey1" />
 
-    <EditText
-        android:id="@+id/profile_phone"
+    <TextView
+        android:id="@+id/profile_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:autofillHints="true"
         android:background="@drawable/frame4"
         android:elevation="5dp"
-        android:enabled="true"
         android:hint="@string/email"
-        android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:padding="10dp"
-        tools:ignore="TextFields"
+        android:gravity="center"
         android:textColor="@color/black"
-        android:textColorHint="@color/grey1"/>
+        android:textColorHint="@color/grey1" />
+
 
 
     <RelativeLayout

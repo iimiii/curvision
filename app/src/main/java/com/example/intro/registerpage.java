@@ -2,6 +2,7 @@ package com.example.intro;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ImageView;
@@ -17,6 +18,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.Objects;
 
 public class registerpage extends AppCompatActivity {
 
@@ -63,9 +66,9 @@ public class registerpage extends AppCompatActivity {
         TextInputEditText confirmPasswordEditText = findViewById(R.id.confirmpassword);
 
         // Get the text from the fields
-        String email = emailEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
-        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
+        String email = Objects.requireNonNull(emailEditText.getText()).toString().trim();
+        String password = Objects.requireNonNull(passwordEditText.getText()).toString().trim();
+        String confirmPassword = Objects.requireNonNull(confirmPasswordEditText.getText()).toString().trim();
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
             Toast.makeText(registerpage.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -121,18 +124,26 @@ public class registerpage extends AppCompatActivity {
         mAuth.signInWithCredential(GoogleAuthProvider.getCredential(acct.getIdToken(), null))
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        // Save user details for later use
+                        saveProfileInfo(acct.getDisplayName(), acct.getEmail(),
+                                acct.getPhotoUrl() != null ? acct.getPhotoUrl().toString() : null);
+
+                        // Navigate to Home Page
                         navigateToSecondActivity();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Google Sign-In Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Authentication with Google failed", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
+
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         navigateToSecondActivity();
     }
+
     void navigateToSecondActivity() {
         finish();
         Intent intent = new Intent(registerpage.this, homepage.class);
@@ -145,4 +156,14 @@ public class registerpage extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeCustomAnimation(registerpage.this, R.anim.animate_in_out_enter, R.anim.animate_in_out_exit);
         startActivity(intent, options.toBundle());
     }
+
+    private void saveProfileInfo(String name, String email, String photoUrl) {
+        SharedPreferences prefs = getSharedPreferences("UserProfile", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("name", name);
+        editor.putString("email", email);
+        editor.putString("photoUrl", photoUrl);
+        editor.apply();
+    }
+
 }

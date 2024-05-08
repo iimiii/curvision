@@ -10,132 +10,232 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.044"
+        android:layout_height="75dp"
         android:background="@color/yellow">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/logo_maroon"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/approaching_vehicles"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="18sp"
+            android:layout_marginStart="125dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="@string/approaching_vehicles"
             android:textColor="@color/maroon"
+            android:textSize="18sp"
             tools:ignore="RelativeOverlap" />
-
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_marginEnd="15dp"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            android:layout_alignParentEnd="true"
-            app:lottie_fileName="vehicles.json" />
 
 
     </RelativeLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/line" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-            <!-- Left Lane Text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/left_lane"
-                android:textSize="18sp"
-                android:textColor="@color/maroon"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"/>
-
-            <!-- Right Lane Text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/right_lane"
-                android:textSize="18sp"
-                android:textColor="@color/maroon"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
+        <!-- First major section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <!-- Left Lane Scroll View -->
-            <ScrollView
-                android:id="@+id/left_lane_scroll_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/vehicles_going_to_north"
+                android:textColor="@color/maroon"
+                android:textSize="18sp" />
 
-                <LinearLayout
-                    android:id="@+id/left_lane_linear_layout"
-                    android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                </LinearLayout>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/left_lane"
+                    android:textColor="@color/maroon"
+                    android:textSize="18sp" />
 
-            </ScrollView>
-
-            <!-- Right Lane Scroll View -->
-            <ScrollView
-                android:id="@+id/right_lane_scroll_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:id="@+id/right_lane_linear_layout"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                </LinearLayout>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/right_lane"
+                    android:textColor="@color/maroon"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
-            </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <ScrollView
+                    android:id="@+id/left_lane_scroll_view"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/left_lane_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- Add views as required -->
+                    </LinearLayout>
+                </ScrollView>
+
+                <ScrollView
+                    android:id="@+id/right_lane_scroll_view"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/right_lane_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- Add views as required -->
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
         </LinearLayout>
+
+        <!-- Second major section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/vehicles_going_to_south"
+                android:textColor="@color/maroon"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!-- Left Lane Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/left_lane"
+                    android:textColor="@color/maroon"
+                    android:textSize="18sp" />
+
+                <!-- Right Lane Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/right_lane"
+                    android:textColor="@color/maroon"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Left Lane Scroll View -->
+                <ScrollView
+                    android:id="@+id/left_lane_scroll_view2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/left_lane_linear_layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+                <!-- Right Lane Scroll View -->
+                <ScrollView
+                    android:id="@+id/right_lane_scroll_view2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/right_lane_linear_layout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,65 +252,65 @@
                 android:textColor="@color/black" />
         </LinearLayout>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/frame3"
-        android:orientation="horizontal"
-        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/frame3"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageView
-            android:id="@+id/home_icon"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/home_icon"
-            android:background="@drawable/ripple_effect" />
+            <ImageView
+                android:id="@+id/home_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/home_icon"
+                android:background="@drawable/ripple_effect" />
 
-        <ImageView
-            android:id="@+id/loc_icon"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/loc_icon"
-            android:background="@drawable/ripple_effect" />
+            <ImageView
+                android:id="@+id/loc_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/loc_icon"
+                android:background="@drawable/ripple_effect" />
 
-        <ImageView
-            android:id="@+id/emergency_icon"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/emergency_icon"
-            android:background="@drawable/ripple_effect"/>
+            <ImageView
+                android:id="@+id/emergency_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/emergency_icon"
+                android:background="@drawable/ripple_effect"/>
 
-        <ImageView
-            android:id="@+id/history_icon"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/history_icon"
-            android:background="@drawable/ripple_effect"/>
+            <ImageView
+                android:id="@+id/history_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/history_icon"
+                android:background="@drawable/ripple_effect"/>
 
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/redcar"
-            android:background="@drawable/ripple_effect"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/redcar"
+                android:background="@drawable/ripple_effect"/>
 
-        <ImageView
-            android:id="@+id/prof_icon"
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/prof"
-            android:background="@drawable/ripple_effect"/>
+            <ImageView
+                android:id="@+id/prof_icon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/prof"
+                android:background="@drawable/ripple_effect"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -21,11 +21,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.LinkedList;
 public class vehiclespage extends AppCompatActivity {
 
+    private static final long DATA_EXPIRATION_TIME = 3 * 60 * 1000; // 3 minutes in milliseconds
+    private static long lastUpdateTime = 0;
     private DatabaseReference leftSensorRef;
     private DatabaseReference rightSensorRef;
 
-    private LinearLayout leftLaneLinearLayout;
-    private LinearLayout rightLaneLinearLayout;
+    private LinearLayout leftLaneLinearLayout1;
+    private LinearLayout rightLaneLinearLayout1;
+    private LinearLayout leftLaneLinearLayout2;
+    private LinearLayout rightLaneLinearLayout2;
 
     private final LinkedList<String> leftLaneData = new LinkedList<>();
     private final LinkedList<String> rightLaneData = new LinkedList<>();
@@ -40,8 +44,10 @@ public class vehiclespage extends AppCompatActivity {
         ImageView history_iconButton = findViewById(R.id.history_icon);
         ImageView loc_iconButton = findViewById(R.id.loc_icon);
         ImageView prof_iconButton = findViewById(R.id.prof_icon);
-        leftLaneLinearLayout = findViewById(R.id.left_lane_linear_layout);
-        rightLaneLinearLayout = findViewById(R.id.right_lane_linear_layout);
+        leftLaneLinearLayout1 = findViewById(R.id.left_lane_linear_layout);
+        rightLaneLinearLayout1 = findViewById(R.id.right_lane_linear_layout);
+        leftLaneLinearLayout2 = findViewById(R.id.left_lane_linear_layout2);
+        rightLaneLinearLayout2 = findViewById(R.id.right_lane_linear_layout2);
 
         home_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(vehiclespage.this, homepage.class);
@@ -77,77 +83,97 @@ public class vehiclespage extends AppCompatActivity {
         leftSensorRef = database.getReference("LeftSensor/speed");
         rightSensorRef = database.getReference("RightSensor/speed");
 
-        // Attach ValueEventListener to listen for changes in speed for Left Sensor
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastUpdateTime > DATA_EXPIRATION_TIME) {
+            leftLaneData.clear();
+            rightLaneData.clear();
+        } else {
+            // Refresh the data on the UI if it is still valid
+            updateLaneTextViews(leftLaneLinearLayout1, leftLaneData);
+            updateLaneTextViews(rightLaneLinearLayout1, rightLaneData);
+            updateLaneTextViews(leftLaneLinearLayout2, leftLaneData);
+            updateLaneTextViews(rightLaneLinearLayout2, rightLaneData);
+        }
+
+        attachDatabaseReadListeners();
+    }
+
+    private void navigateTo(Class<?> cls) {
+        Intent intent = new Intent(vehiclespage.this, cls);
+        ActivityOptions options = ActivityOptions.makeCustomAnimation(
+                vehiclespage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+        startActivity(intent, options.toBundle());
+    }
+
+    private void attachDatabaseReadListeners() {
         leftSensorRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                float speed = dataSnapshot.getValue(Float.class);
-                if (!Float.isNaN(speed) && speed >= 1.00f) {
+                Float speed = dataSnapshot.getValue(Float.class);
+                if (speed != null && speed >= 1.00f) {
                     String formattedSpeed = String.format("%.2f m/s", speed);
                     leftLaneData.addFirst(formattedSpeed);
-                    updateLeftLaneTextViews();
+                    updateLaneTextViews(leftLaneLinearLayout1, leftLaneData);
+                    updateLaneTextViews(rightLaneLinearLayout2, leftLaneData);
+                    lastUpdateTime = System.currentTimeMillis();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle cancelled event
+                // Handle possible cancellations
             }
         });
 
-        // Attach ValueEventListener to listen for changes in speed for Right Sensor
         rightSensorRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                float speed = dataSnapshot.getValue(Float.class);
-                if (!Float.isNaN(speed) && speed >= 1.00f) {
+                Float speed = dataSnapshot.getValue(Float.class);
+                if (speed != null && speed >= 1.00f) {
                     String formattedSpeed = String.format("%.2f m/s", speed);
                     rightLaneData.addFirst(formattedSpeed);
-                    updateRightLaneTextViews();
-
+                    updateLaneTextViews(rightLaneLinearLayout1, rightLaneData);
+                    updateLaneTextViews(leftLaneLinearLayout2, rightLaneData);
+                    lastUpdateTime = System.currentTimeMillis();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle cancelled event
+                // Handle possible cancellations
             }
         });
     }
 
-    private void updateLeftLaneTextViews() {
-        leftLaneLinearLayout.removeAllViews();
-        for (String speed : leftLaneData) {
-            TextView textView = new TextView(this);
-            textView.setText(speed);
-            textView.setBackgroundResource(R.drawable.frame2); // Set background drawable
-            textView.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-            textView.setPadding(12, 12, 0, 12); // Add padding for better appearance
-            textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP); // Center the text
-            textView.setTextColor(getResources().getColor(R.color.black));
-            textView.setTypeface(null, Typeface.BOLD);
-            leftLaneLinearLayout.addView(textView);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastUpdateTime > DATA_EXPIRATION_TIME) {
+            leftLaneData.clear();
+            rightLaneData.clear();
         }
+        // Refresh UI
+        updateLaneTextViews(leftLaneLinearLayout1, leftLaneData);
+        updateLaneTextViews(rightLaneLinearLayout1, rightLaneData);
+        updateLaneTextViews(leftLaneLinearLayout2, leftLaneData);
+        updateLaneTextViews(rightLaneLinearLayout2, rightLaneData);
     }
 
-    private void updateRightLaneTextViews() {
-        rightLaneLinearLayout.removeAllViews();
-        for (String speed : rightLaneData) {
+    private void updateLaneTextViews(LinearLayout layout, LinkedList<String> data) {
+        layout.removeAllViews();
+        for (String speed : data) {
             TextView textView = new TextView(this);
             textView.setText(speed);
-            textView.setBackgroundResource(R.drawable.frame2); // Set background drawable
+            textView.setBackgroundResource(R.drawable.frame2);
             textView.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-            textView.setPadding(12, 12, 0, 12); // Add padding for better appearance
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            textView.setPadding(12, 12, 0, 12);
             textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
             textView.setTextColor(getResources().getColor(R.color.black));
             textView.setTypeface(null, Typeface.BOLD);
-            rightLaneLinearLayout.addView(textView);
+            layout.addView(textView);
         }
     }
 }

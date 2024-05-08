@@ -5,7 +5,7 @@
     <string name="intro_title_1">Indicate Approaching\nVehicle</string>
     <string name="intro_des_1">Foresee approaching vehicle in\nblind curve area</string>
     <string name="intro_title_2">Locate Blind\nCurve Risk</string>
-    <string name="intro_des_2">Provides notification and indicator system\nin terms of possible hazard</string>
+    <string name="intro_des_2">Provides alarm and indicator system\nin terms of possible hazard</string>
     <string name="intro_title_3">Monitor\nSpeed (kmph)</string>
     <string name="intro_des_3">Track vehicle speed</string>
     <string name="h1">Innovation meets\nsafety with\nCurVision</string>
@@ -98,7 +98,7 @@
     \n\nThe mayor urged motorists to be careful when driving, to prevent from any road mishaps. — Robhe Jane C. Yara, GAN (FREEMAN) </string>
     <string name="explore_more_with_curvision">Explore More with\n<font color="#F6B923"><b>CurVision!</b></font></string>
     <string name="explore">explore</string>
-    <string name="search">Search…</string>
+    <string name="search">Search...</string>
     <string name="news"><b>News</b></string>
     <string name="see_all">See all</string>
     <string name="wendell_damayo">Wendell Damayo</string>
@@ -116,17 +116,23 @@
     <string name="emergency_quote">Stay Sharp with\n<font color="#F6B923"><b>CurVision!</b></font></string>
     <string name="logout">Logout</string>
     <string name="update_profile">Update profile</string>
-    <string name="notif">No notification available…</string>
-    <string name="curvision"><b><font color="#680216">Curve</font><font color="#F6B923">Vision</font></b></string>
-    <string name="loc">Barangay Liki, Sogod, Cebu</string>
-    <string name="loc2">Central Nautical Hwy, Cebu</string>
-    <string name="loc3">10.796449, 123.994576</string>
-    <string name="loc4">Known as \'The Lethal Road\', this stretch has witnessed numerous fatal accidents, its sharp curves and hidden hazards making it a perilous passage. Despite its scenic allure, it demands utmost caution from drivers, as its treacherous twists offer little room for error.</string>
 
     <string name="default_web_client_id">191215156615-409gl616ea73iuphktj7dakv4i1s7i4g.apps.googleusercontent.com</string>
     <string name="left_lane"><b>Left Lane</b>\n(Speed)</string>
     <string name="right_lane"><b>Right Lane</b>\n(Speed)</string>
-    <string name="name1">Name:</string>
-    <string name="email1">Email:</string>
+
+    <string name="curvision"><b><font color="#680216">Curve</font><font color="#F6B923">Vision</font></b></string>
+    <string name="loc">Barangay Liki, Sogod, Cebu</string>
+    <string name="loc2">Central Nautical Hwy, Cebu</string>
+    <string name="loc3">10.796449, 123.994576</string>
+    <string name="loc4">Known as \'The Lethal Road\', this stretch has witnessed numerous fatal accidents, its sharp curves and hidden hazards making it a perilous passage. </string>
+    <string name="call_911">Call: 911</string>
+    <string name="nationwide_emergency_hotline">Nationwide Emergency Hotline</string>
+    <string name="call_09958736046">Call: 09958736046</string>
+    <string name="_911">911</string>
+    <string name="_09958736046">09958736046</string>
+    <string name="vehicles_going_to_north"><b>VEHICLES GOING TO NORTH</b></string>
+    <string name="vehicles_going_to_south"><b>VEHICLES GOING TO SOUTH</b></string>
+    <string name="notif">No notifications to show…</string>
 
 </resources>

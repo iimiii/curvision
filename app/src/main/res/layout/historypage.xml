@@ -25,6 +25,7 @@
         android:fontFamily="sans-serif-black"/>
 
     <ImageView
+        android:id="@+id/logohome"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/cv_logo"

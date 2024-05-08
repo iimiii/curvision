@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -44,7 +45,6 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
     private GeofencingClient mGeofencingClient;
     private List<Geofence> mGeofenceList;
     private PendingIntent geofencePendingIntent; // Declare here
-
     private PopupWindow popupWindow;
 
     @Override
@@ -68,7 +68,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         // Define curve road geofence parameters
         mGeofenceList.add(new Geofence.Builder()
                 .setRequestId("CurveRoad")
-                .setCircularRegion(10.796488501166039, 123.99457851460627, 10)
+                .setCircularRegion(10.320109, 123.929121, 30)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build());
@@ -131,6 +131,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
     }
+
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         // Enable user's location and zoom to current location
@@ -142,12 +143,12 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Add marker for the curve road
-        LatLng curveRoadLatLng = new LatLng(10.796409472641445, 123.99460939973841);
+        LatLng curveRoadLatLng = new LatLng(10.796478, 123.994591);
         googleMap.addMarker(new MarkerOptions().position(curveRoadLatLng).title("Curve Road"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 13f));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 15f));
 
-        LatLng geofenceCenter = new LatLng(10.796409472641445, 123.99460939973841); // Example coordinates
-        float radius = 10; // in meters
+        LatLng geofenceCenter = new LatLng(10.796478, 123.994591); // Example coordinates
+        float radius = 30; // in meters
         googleMap.addCircle(new CircleOptions()
                 .center(geofenceCenter)
                 .radius(radius)
@@ -158,13 +159,37 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mGeofencingClient.addGeofences(getGeofencingRequest(), getGeofencePendingIntent());
         }
+
+        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                float[] distance = new float[1];
+                Location.distanceBetween(geofenceCenter.latitude, geofenceCenter.longitude, latLng.latitude, latLng.longitude, distance);
+                if (distance[0] <= radius) {
+                    // Inside geofence
+                    sendGeofenceTransitionBroadcast(Geofence.GEOFENCE_TRANSITION_ENTER, "CurveRoad");
+                } else {
+                    // Outside geofence
+                    sendGeofenceTransitionBroadcast(Geofence.GEOFENCE_TRANSITION_EXIT, "CurveRoad");
+                }
+            }
+        });
     }
 
+    // Inside onMapReady method
+    private void sendGeofenceTransitionBroadcast(int transitionType, String geofenceId) {
+        Intent intent = new Intent("GEOFENCE_TRANSITION");
+        intent.putExtra("transitionType", transitionType);
+        intent.putExtra("geofenceId", geofenceId);
+        sendBroadcast(intent);
+    }
+
+
     private GeofencingRequest getGeofencingRequest() {
-        return new GeofencingRequest.Builder()
-                .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
-                .addGeofences(mGeofenceList)
-                .build();
+        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+        builder.addGeofences(mGeofenceList);
+        return builder.build();
     }
 
     private PendingIntent getGeofencePendingIntent() {
@@ -175,8 +200,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         intent.setAction("GEOFENCE_TRANSITION");
         intent.putExtra("transitionType", Geofence.GEOFENCE_TRANSITION_ENTER); // Example transition type
         intent.putExtra("geofenceId", "CurveRoad"); // Example geofence ID
-        geofencePendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.
-                FLAG_UPDATE_CURRENT);
+        geofencePendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         return geofencePendingIntent;
     }
 
@@ -186,7 +210,8 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_LOCATION_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                recreate();
+                // Permission granted, register geofences
+                registerGeofences();
             } else {
                 Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
             }
@@ -239,6 +264,9 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    private static class broadcastreceiver {
+    private void registerGeofences() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mGeofencingClient.addGeofences(getGeofencingRequest(), getGeofencePendingIntent());
+        }
     }
 }

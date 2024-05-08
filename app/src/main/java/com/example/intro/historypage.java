@@ -35,6 +35,14 @@ public class historypage extends AppCompatActivity {
         ImageView history2Button = findViewById(R.id.history2);
         ImageView history3Button = findViewById(R.id.history3);
         ImageView history4Button = findViewById(R.id.history4);
+        ImageView logohomeButton = findViewById(R.id.logohome);
+
+
+        logohomeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(historypage.this, homepage.class);
+            ActivityOptions options = ActivityOptions.makeCustomAnimation(historypage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
+            startActivity(intent, options.toBundle());
+        });
 
 
         home_iconButton.setOnClickListener(v -> {

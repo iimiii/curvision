@@ -73,7 +73,7 @@
                 android:gravity="center"
                 android:text="@string/loc_des"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="TextSizeCheck" />
 
             <TextView
@@ -84,7 +84,7 @@
                 android:gravity="center"
                 android:text="@string/loc_des2"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="TextSizeCheck" />
 
             <TextView
@@ -95,7 +95,7 @@
                 android:gravity="center"
                 android:text="@string/loc_des3"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="TextSizeCheck" />
 
             <TextView
@@ -106,7 +106,7 @@
                 android:gravity="center"
                 android:text="@string/loc_des4"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 tools:ignore="TextSizeCheck" />
         </LinearLayout>
     </ScrollView>

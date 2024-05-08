@@ -24,36 +24,43 @@
         android:text="@string/profile"
         android:textColor="@color/black"/>
 
-    <com.airbnb.lottie.LottieAnimationView
+    <ImageView
+        android:id="@+id/profile_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        app:lottie_fileName="profile.json"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profile_placeholder"
         android:scaleType="centerCrop"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="20dp"/>
 
     <TextView
-        android:id="@+id/name_user"
+        android:id="@+id/profile_name"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="@string/name1"
-        android:textSize="20sp"
         android:background="@drawable/frame4"
-        android:textColor="@color/black"/>
+        android:elevation="5dp"
+        android:hint="@string/name"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey1" />
 
     <TextView
-        android:id="@+id/email_user"
+        android:id="@+id/profile_email"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="@string/email1"
-        android:textSize="20sp"
         android:background="@drawable/frame4"
-        android:textColor="@color/black"/>
+        android:elevation="5dp"
+        android:hint="@string/email"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey1" />
+
 
 
     <RelativeLayout
@@ -62,7 +69,17 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame4"
+            android:text="@string/update_profile" />
 
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:indeterminateTint="@color/maroon" />
 
         <TextView
             android:layout_width="match_parent"

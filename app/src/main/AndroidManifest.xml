@@ -90,6 +90,7 @@
             android:value="AIzaSyAJmRSCXQOUgjmNdskQ4TwLwTgvViW-xNA"/>
 
         <receiver android:name=".broadcastreceiver"
+            android:enabled="true"
             android:exported="true"
             android:permission="TODO">
             <intent-filter>

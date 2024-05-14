@@ -3,12 +3,12 @@ package com.example.intro;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +23,10 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.location.Geofence;
-import com.google.android.gms.location.GeofencingClient;
-import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,17 +36,23 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Locale;
 
 public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final int REQUEST_LOCATION_PERMISSION = 1;
-
-    private GeofencingClient mGeofencingClient;
-    private List<Geofence> mGeofenceList;
-    private PendingIntent geofencePendingIntent; // Declare here
     private PopupWindow popupWindow;
+    private FusedLocationProviderClient fusedLocationClient;
+    private LocationCallback locationCallback;
+    private LocationRequest locationRequest;
+    private TextToSpeech textToSpeech;
+    private boolean notificationSpoken = false;
+    private GoogleMap mMap;
+
+    private final LatLng[] geofences = {
+            new LatLng(10.485120, 124.020210),
+    };
+    private final float geofenceRadius = 30f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,19 +69,25 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
             finish();
         }
 
-        mGeofenceList = new ArrayList<>();
-        mGeofencingClient = LocationServices.getGeofencingClient(this);
-
-        // Define curve road geofence parameters
-        mGeofenceList.add(new Geofence.Builder()
-                .setRequestId("CurveRoad")
-                .setCircularRegion(10.320109, 123.929121, 30)
-                .setExpirationDuration(Geofence.NEVER_EXPIRE)
-                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
-                .build());
-
         initPopupWindow();
+        initButtons();
+        initLocationServices();
+        initTextToSpeech();
+    }
 
+    private void initPopupWindow() {
+        @SuppressLint("InflateParams")
+        View popupView = LayoutInflater.from(this).inflate(R.layout.info_loc, null);
+        int width = 700;
+        int height = 800;
+        popupView.setLayoutParams(new ViewGroup.LayoutParams(width, height));
+        popupWindow = new PopupWindow(popupView, width, height);
+        popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+    }
+
+    private void initButtons() {
         ImageView home_iconButton = findViewById(R.id.home_icon);
         ImageView emergency_iconButton = findViewById(R.id.emergency_icon);
         ImageView history_iconButton = findViewById(R.id.history_icon);
@@ -93,7 +106,6 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
             ActivityOptions options = ActivityOptions.makeCustomAnimation(mapspage.this, R.anim.animate_fade_enter, R.anim.animate_fade_exit);
             startActivity(intent, options.toBundle());
         });
-
 
         history_iconButton.setOnClickListener(v -> {
             Intent intent = new Intent(mapspage.this, historypage.class);
@@ -120,102 +132,92 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         });
     }
 
-    private void initPopupWindow() {
-        @SuppressLint("InflateParams")
-        View popupView = LayoutInflater.from(this).inflate(R.layout.info_loc, null);
-        int width = 700;
-        int height = 800;
-        popupView.setLayoutParams(new ViewGroup.LayoutParams(width, height));
-        popupWindow = new PopupWindow(popupView, width, height);
-        popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setFocusable(true);
+    private void initLocationServices() {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        createLocationRequest();
+        createLocationCallback();
+    }
+
+    private void createLocationRequest() {
+        locationRequest = LocationRequest.create();
+        locationRequest.setInterval(10000);
+        locationRequest.setFastestInterval(5000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+    }
+
+    private void createLocationCallback() {
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) {
+                    return;
+                }
+                for (Location location : locationResult.getLocations()) {
+                    if (location != null) {
+                        for (LatLng geofence : geofences) {
+                            float[] distance = new float[1];
+                            Location.distanceBetween(location.getLatitude(), location.getLongitude(), geofence.latitude, geofence.longitude, distance);
+                            if (distance[0] <= geofenceRadius && !notificationSpoken) {
+                                displayWarningNotification();
+                                String message = "WARNING! You're Entering a Blind Curve Area";
+                                textToSpeech.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);
+                                notificationSpoken = true;
+                            } else if (distance[0] > geofenceRadius) {
+                                notificationSpoken = false;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    }
+
+    private void displayWarningNotification() {
+        // Display a warning notification using a custom Toast
+        View layout = getLayoutInflater().inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.TOP|Gravity.CENTER, 0, 175);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    private void initTextToSpeech() {
+        textToSpeech = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                textToSpeech.setLanguage(Locale.US);
+            } else {
+                Toast.makeText(mapspage.this, "Text to Speech initialization failed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+
         // Enable user's location and zoom to current location
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
             return;
         }
-        googleMap.setMyLocationEnabled(true);
-        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-        // Add marker for the curve road
-        LatLng curveRoadLatLng = new LatLng(10.320109, 123.929121);
-        googleMap.addMarker(new MarkerOptions().position(curveRoadLatLng).title("Curve Road"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curveRoadLatLng, 15f));
-
-        LatLng geofenceCenter = new LatLng(10.320109, 123.929121); // Example coordinates
-        float radius = 30; // in meters
-        googleMap.addCircle(new CircleOptions()
-                .center(geofenceCenter)
-                .radius(radius)
-                .strokeColor(Color.RED)
-                .fillColor(Color.argb(64, 200, 0, 0)));
-
-        // Register geofences
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            mGeofencingClient.addGeofences(getGeofencingRequest(), getGeofencePendingIntent());
+        // Add markers and circles for each geofence
+        for (LatLng geofence : geofences) {
+            mMap.addMarker(new MarkerOptions().position(geofence).title("Geofence Area"));
+            mMap.addCircle(new CircleOptions()
+                    .center(geofence)
+                    .radius(geofenceRadius)
+                    .strokeColor(Color.RED)
+                    .fillColor(Color.argb(64, 200, 0, 0)));
         }
 
-        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng latLng) {
-                float[] distance = new float[1];
-                Location.distanceBetween(geofenceCenter.latitude, geofenceCenter.longitude, latLng.latitude, latLng.longitude, distance);
-                if (distance[0] <= radius) {
-                    // Inside geofence
-                    sendGeofenceTransitionBroadcast(Geofence.GEOFENCE_TRANSITION_ENTER, "CurveRoad");
-                } else {
-                    // Outside geofence
-                    sendGeofenceTransitionBroadcast(Geofence.GEOFENCE_TRANSITION_EXIT, "CurveRoad");
-                }
-            }
-        });
-    }
-
-    // Inside onMapReady method
-    private void sendGeofenceTransitionBroadcast(int transitionType, String geofenceId) {
-        Intent intent = new Intent("GEOFENCE_TRANSITION");
-        intent.putExtra("transitionType", transitionType);
-        intent.putExtra("geofenceId", geofenceId);
-        sendBroadcast(intent);
-    }
-
-
-    private GeofencingRequest getGeofencingRequest() {
-        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
-        builder.addGeofences(mGeofenceList);
-        return builder.build();
-    }
-
-    private PendingIntent getGeofencePendingIntent() {
-        if (geofencePendingIntent != null) {
-            return geofencePendingIntent;
-        }
-        Intent intent = new Intent(this, broadcastreceiver.class);
-        intent.setAction("GEOFENCE_TRANSITION");
-        intent.putExtra("transitionType", Geofence.GEOFENCE_TRANSITION_ENTER); // Example transition type
-        intent.putExtra("geofenceId", "CurveRoad"); // Example geofence ID
-        geofencePendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        return geofencePendingIntent;
-    }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_LOCATION_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, register geofences
-                registerGeofences();
-            } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
-            }
-        }
+        // Move the camera to the first geofence
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(geofences[0], 15f));
     }
 
     private boolean isGooglePlayServicesAvailable() {
@@ -229,6 +231,9 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         super.onResume();
         MapView mMapView = findViewById(R.id.map);
         mMapView.onResume();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
+        }
     }
 
     @Override
@@ -236,6 +241,7 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         super.onPause();
         MapView mMapView = findViewById(R.id.map);
         mMapView.onPause();
+        fusedLocationClient.removeLocationUpdates(locationCallback);
     }
 
     @Override
@@ -243,6 +249,10 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
         super.onDestroy();
         MapView mMapView = findViewById(R.id.map);
         mMapView.onDestroy();
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
     }
 
     @Override
@@ -262,11 +272,5 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
-    }
-
-    private void registerGeofences() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            mGeofencingClient.addGeofences(getGeofencingRequest(), getGeofencePendingIntent());
-        }
     }
 }

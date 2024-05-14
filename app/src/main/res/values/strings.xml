@@ -133,5 +133,6 @@
     <string name="_09958736046">09958736046</string>
     <string name="vehicles_going_to_north"><b>VEHICLES GOING TO NORTH</b></string>
     <string name="vehicles_going_to_south"><b>VEHICLES GOING TO SOUTH</b></string>
+    <string name="warning">WARNING! You\'re Entering a Blind Curve Area</string>
 
 </resources>

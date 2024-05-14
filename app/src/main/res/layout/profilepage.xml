@@ -44,6 +44,7 @@
         android:padding="10dp"
         android:gravity="center"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textColorHint="@color/grey1" />
 
     <TextView
@@ -58,6 +59,7 @@
         android:padding="10dp"
         android:gravity="center"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textColorHint="@color/grey1" />
 
 
@@ -74,11 +76,6 @@
             android:background="@drawable/frame4"
             android:text="@string/update_profile" />
 
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:indeterminateTint="@color/maroon" />
 
         <TextView
             android:layout_width="match_parent"

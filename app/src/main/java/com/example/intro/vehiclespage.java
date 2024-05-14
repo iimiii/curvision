@@ -110,7 +110,7 @@ public class vehiclespage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Float speed = dataSnapshot.getValue(Float.class);
-                if (speed != null && speed >= 1.00f) {
+                if (speed != null && speed >= 4.00f) {
                     String formattedSpeed = String.format("%.2f m/s", speed);
                     leftLaneData.addFirst(formattedSpeed);
                     updateLaneTextViews(leftLaneLinearLayout1, leftLaneData);
@@ -129,7 +129,7 @@ public class vehiclespage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Float speed = dataSnapshot.getValue(Float.class);
-                if (speed != null && speed >= 1.00f) {
+                if (speed != null && speed >= 4.00f) {
                     String formattedSpeed = String.format("%.2f m/s", speed);
                     rightLaneData.addFirst(formattedSpeed);
                     updateLaneTextViews(rightLaneLinearLayout1, rightLaneData);

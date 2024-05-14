@@ -8,9 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
@@ -102,19 +100,6 @@ public class emergencypage extends AppCompatActivity {
         } else {
             // Request the CALL_PHONE permission if not granted
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, CALL_PHONE_PERMISSION_REQUEST);
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CALL_PHONE_PERMISSION_REQUEST) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, make the call
-                callEmergencyNumber("911");
-            } else {
-                // Permission denied, show a message or handle accordingly
-                Toast.makeText(this, "Permission denied to make a phone call", Toast.LENGTH_SHORT).show();
-            }
         }
     }
 }

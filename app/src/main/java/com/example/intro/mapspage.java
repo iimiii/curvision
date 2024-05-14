@@ -50,9 +50,9 @@ public class mapspage extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
 
     private final LatLng[] geofences = {
-            new LatLng(10.485120, 124.020210),
+            new LatLng(10.796431, 123.994172),
     };
-    private final float geofenceRadius = 30f;
+    private final float geofenceRadius = 300f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
